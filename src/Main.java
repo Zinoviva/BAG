@@ -3,21 +3,19 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);  // заводиим сканер
 
-        String[] operation = {"1.Добавить", "2.Показать", "3.Удалить"};  //операция
-//не через массив а через ArrayList
-        ArrayList<String> list = new ArrayList<>();
+        String[] operation = {"1.Добавить", "2.Показать", "3.Удалить"};  //список операций
+        ArrayList<String> list = new ArrayList<>();  // список
 
-        while (true) {
-            //в цикле условие задачи
+        while (true) {  //в цикле условие задачи
             System.out.println("Выберите операцию:");  //показываем наши операции какие есть
             for (int i = 0; i < operation.length; i++) {
                 System.out.println((operation[i]).toString());
             }
 
             String input = scanner.nextLine();
-            if (input.equals("3"))
+            if (input.equals("4"))   //выход из программы если вводить 4,5,6 и тд, чтобы не падало в ошибку
                 System.exit(0);
 
             else if (input.equals("1")) {   //добавить
@@ -31,8 +29,7 @@ class Main {
                 System.out.println("Итого в списке покупок:" + " " + list.size() + "товара:" + list);
 
             } else if (input.equals("3")) {    //удалить
-                //товары в корзине показываем клиенту
-                System.out.println("Какую покупку хотите удалить? Введите номер или наименование" + " " + list);
+                System.out.println("Какую покупку хотите удалить? Введите номер или наименование" + " " + list);  //товары в корзине показываем клиенту
                 String removed = scanner.nextLine();  //считать что ввели третий сканер
 
                 if (list.contains(removed)) {  //если лист содержит введенное значение то его нужно удалить
